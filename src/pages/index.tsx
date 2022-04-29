@@ -1,20 +1,22 @@
 import React from "react";
 import Head from "next/head";
+import * as C from "../styles/pages/Home";
 
-import Logo from "../assets/vercel.svg";
-import { Container } from "../styles/pages/Home";
+import Header from "../components/Header";
+import Main from "../components/Main";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
     return (
-        <Container>
+        <C.Container>
             <Head>
-                <title>Livnow</title>
+                <title>XML-Conversor</title>
             </Head>
 
-            <Logo />
-            <h1>Basic Structure Example</h1>
-            <p>Now you're ready to code...</p>
-        </Container>
+            <Header />
+            <Main />
+            <Footer />
+        </C.Container>
     );
 };
 
