@@ -18,7 +18,7 @@ export const DownloadIcon = styled(GrDocumentDownload)`
 
     margin-bottom: 2rem;
 
-    cursor: pointer;
+    cursor: pointer; 
 `;
 
 export const DownloadText = styled.h3`
