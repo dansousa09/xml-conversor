@@ -10,6 +10,8 @@ export default createGlobalStyle`
     body {
         background-color: ${(props) => props.theme.colors.background};
         color: ${(props) => props.theme.colors.text}; 
-        font: 400 16px Roboto, sans-serif
+        font: 400 16px Roboto, sans-serif; 
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
     }
 `;
