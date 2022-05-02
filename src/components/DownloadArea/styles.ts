@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FormControl as MuiFormControl } from '@mui/material';
+import { FormControl as MuiFormControl } from "@mui/material";
 import { GrDocumentDownload } from "react-icons/gr";
 
 export const Container = styled.div`
@@ -20,7 +20,7 @@ export const DownloadIcon = styled(GrDocumentDownload)`
 
     margin-bottom: 2rem;
 
-    cursor: pointer; 
+    cursor: pointer;
 `;
 
 export const DownloadText = styled.h3`
@@ -36,7 +36,7 @@ export const FormControl = styled(MuiFormControl)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
     border-bottom: 2px solid #e6e6e6;
 `;

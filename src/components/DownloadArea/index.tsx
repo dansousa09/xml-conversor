@@ -1,14 +1,16 @@
 import { ChangeEvent, useState } from 'react';
 import useDownloader from 'react-use-downloader'
-import { useLoading } from '../../context/loading';
 import * as C from './styles'
 
 import inputs from '../../utils/inputs'
 import { FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
+import { useLoading } from '../../context/loading';
+import { useMediaQuery } from '../../context/mobile';
 
 const DownloadArea = () => {
     const [inputSelected, setInputSelected] = useState(inputs[0].id)
     const loading = useLoading();
+    const { isMobile } = useMediaQuery();
 
     const { download, error, isInProgress } = useDownloader();
 
@@ -71,6 +73,9 @@ const DownloadArea = () => {
             <C.DownloadText>Faça o download da planilha exemplo</C.DownloadText>
             <C.DownloadSubText>(Preencha os dados de acordo com a marcação indicada)</C.DownloadSubText>
             {error && alert(`possível erro: ${JSON.stringify(error)}`)}
+
+
+
         </C.Container>
     )
 }
