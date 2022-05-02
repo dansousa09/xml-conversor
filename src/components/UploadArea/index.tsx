@@ -17,7 +17,8 @@ const UploadArea = () => {
                 },
                 error: function (err) {
                     console.log("Error", err);
-                }
+                },
+                skipEmptyLines: true,
             }
             )
         } else {
