@@ -26,8 +26,8 @@ const DownloadArea = () => {
                 fileName = "vercel-copy.svg";
                 break;
             case 3:
-                fileUrl = "/vercel-copy-2.svg";
-                fileName = "vercel-copy-2.svg";
+                fileUrl = "/inclusao.csv";
+                fileName = "inclusao.csv";
                 break;
             case 4:
                 fileUrl = "/vercel-copy-3.svg";
@@ -45,7 +45,6 @@ const DownloadArea = () => {
 
     const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
         const input = inputs.find(input => input.value === event.target.value);
-        console.log(input);
         setInputSelected(input.id);
     }
 
