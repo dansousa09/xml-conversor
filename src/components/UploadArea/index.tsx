@@ -57,23 +57,23 @@ const UploadArea = () => {
         let filename = "";
         switch (inputSelected.id) {
             case 1:
-                filename = "alteracao.txt";
+                filename = "alteracao.xml";
                 break;
             case 2:
-                filename = "exclusao.txt";
+                filename = "exclusao.xml";
                 break;
             case 3:
-                filename = "inclusao.txt";
+                filename = "inclusao.xml";
                 break;
             case 4:
-                filename = "vinculacao.txt";
+                filename = "vinculacao.xml";
                 break;
             default:
-                filename = "alteracao.txt";
+                filename = "alteracao.xml";
                 break;
         }
         const element = document.createElement('a');
-        const blob = new Blob([fileConverted], { type: 'text/plain' });
+        const blob = new Blob([fileConverted], { type: 'text/xml' });
 
         element.href = URL.createObjectURL(blob);
         element.setAttribute('download', filename);
