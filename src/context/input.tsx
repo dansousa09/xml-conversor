@@ -2,18 +2,18 @@ import { ChangeEvent, createContext, useContext, useState } from "react";
 import inputs from "../utils/inputs";
 
 const InputContext = createContext({
-  inputSelected: 1,
+  inputSelected: inputs[0],
   handleInputChange: (event: ChangeEvent<HTMLInputElement>) => { },
 });
 
 
 export const InputProvider = ({ children }) => {
-  const [inputSelected, setInputSelected] = useState(inputs[0].id)
+  const [inputSelected, setInputSelected] = useState(inputs[0])
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = inputs.find(input => input.value === event.target.value);
     console.log(input);
-    setInputSelected(input.id);
+    setInputSelected(input);
   };
 
   return (

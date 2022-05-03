@@ -21,4 +21,4 @@ const inputs = [
     }
 ];
 
-export default inputs; 
+export default inputs;

@@ -19,7 +19,7 @@ const DownloadArea = () => {
     let fileName = "vercel.svg";
 
     const downloadFile = (fileUrl: string, fileName: string) => {
-        switch (inputSelected) {
+        switch (inputSelected.id) {
             case 1:
                 fileUrl = "/vercel.svg";
                 fileName = "vercel.svg";

@@ -11,7 +11,7 @@ export const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
 
-    border-right: 2px solid #e6e6e6;
+    border-right: 2px solid ${(props) => props.theme.colors.border};
 `;
 
 export const DownloadIcon = styled(GrDocumentDownload)`
