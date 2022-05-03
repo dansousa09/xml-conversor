@@ -29,8 +29,8 @@ const DownloadArea = () => {
                 fileName = "vercel-copy.svg";
                 break;
             case 3:
-                fileUrl = "/vercel-copy-2.svg";
-                fileName = "vercel-copy-2.svg";
+                fileUrl = "/inclusao.tsv";
+                fileName = "inclusao.tsv";
                 break;
             case 4:
                 fileUrl = "/vercel-copy-3.svg";
