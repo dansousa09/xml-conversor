@@ -14,9 +14,11 @@ export default async function handler(
             res.status(500).json({
                 message: body.message
             });
-        }
+        } 
 
-        const fileConverted = await convertFile(body); 
+        console.log(id);
+
+        const fileConverted = await convertFile(body, +id); 
         const blob = new Blob([fileConverted], { type: "text/plain" }); 
 
         res.status(200).send({ blob, file: fileConverted });
