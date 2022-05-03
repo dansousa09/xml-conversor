@@ -6,10 +6,11 @@ import inputs from '../../utils/inputs'
 import { FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
 import { useLoading } from '../../context/loading';
 import { useMediaQuery } from '../../context/mobile';
+import { useInput } from '../../context/input';
 
 const DownloadArea = () => {
-    const [inputSelected, setInputSelected] = useState(inputs[0].id)
-    const loading = useLoading();
+    const { setLoading } = useLoading();
+    const { inputSelected, handleInputChange } = useInput(); 
     const { isMobile } = useMediaQuery();
 
     const { download, error, isInProgress } = useDownloader();
@@ -41,15 +42,9 @@ const DownloadArea = () => {
                 break;
         }
 
-        isInProgress && loading.setLoading(true);
+        isInProgress && setLoading(true);
         download(fileUrl, fileName);
     };
-
-    const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-        const input = inputs.find(input => input.value === event.target.value);
-        console.log(input);
-        setInputSelected(input.id);
-    }
 
     return (
         <C.Container >
@@ -60,7 +55,7 @@ const DownloadArea = () => {
                     aria-labelledby="radio-buttons-group-label"
                     defaultValue="alteracao"
                     name="radio-buttons-group"
-                    onChange={(e) => handleChangeInput(e)}
+                    onChange={(e) => handleInputChange(e)}
                 >
                     {inputs.map(input => {
                         return <FormControlLabel key={input.id} value={input.value} control={<Radio />} label={input.label} />

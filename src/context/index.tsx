@@ -1,11 +1,14 @@
 import { LoadingProvider } from "./loading";
 import { MediaQueryProvider } from "./mobile";
+import { InputProvider } from "./input";
 
 const ContextProvider = ({ children }) => {
     return (
         <LoadingProvider>
             <MediaQueryProvider>
-                {children}
+                <InputProvider>
+                    {children}
+                </InputProvider>
             </MediaQueryProvider>
         </LoadingProvider>
     );
