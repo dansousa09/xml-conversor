@@ -56,24 +56,7 @@ const UploadArea = () => {
     }
 
     const handleDownloadConvertedFile = () => {
-        let filename = "";
-        switch (inputSelected.id) {
-            case 1:
-                filename = "alteracao.xml";
-                break;
-            case 2:
-                filename = "exclusao.xml";
-                break;
-            case 3:
-                filename = "inclusao.xml";
-                break;
-            case 4:
-                filename = "vinculacao.xml";
-                break;
-            default:
-                filename = "alteracao.xml";
-                break;
-        }
+        let filename = uploadedFilename.split('.')[0] + ".xml";
         const element = document.createElement('a');
         const blob = new Blob([fileConverted], { type: 'text/xml' });
 
