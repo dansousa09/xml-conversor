@@ -11,11 +11,13 @@ import filesize from "../../utils/filesize";
 const UploadArea = () => {
     const [fileConverted, setFileConverted] = useState();
     const [blobConverted, setBlobConverted] = useState<Blob>();
+    const [uploadedFilename, setUploadedFilename] = useState<string>();
     const { setLoading } = useLoading();
     const { inputSelected } = useInput();
 
 
-    const handleFileUpload = (files: any) => {
+    const handleFileUpload = (files: any) => { 
+        setUploadedFilename(files[0].name);
         if (files) {
             Papa.parse(files[0], {
                 complete: function (results) {
@@ -118,7 +120,7 @@ const UploadArea = () => {
                         <C.FileIcon />
                     </C.IconButton>
                     <C.FileInfo>
-                        <p>{inputSelected.value}</p>
+                        <p>{uploadedFilename}</p>
                         <p>{filesize(blobConverted?.size)}</p>
                     </C.FileInfo>
                     <C.IconButton onClick={handleDownloadConvertedFile} >
@@ -126,8 +128,6 @@ const UploadArea = () => {
                     </C.IconButton>
                 </C.DownloadConvertedFileArea>
             )}
-
-            {/* {fileConverted && <C.DownloadConvertedFileButton onClick={handleDownloadConvertedFile} >Baixar Arquivo Convertido</C.DownloadConvertedFileButton>} */}
         </C.Container >
     )
 }
