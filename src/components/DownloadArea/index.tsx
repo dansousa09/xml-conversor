@@ -21,8 +21,8 @@ const DownloadArea = () => {
     const downloadFile = (fileUrl: string, fileName: string) => {
         switch (inputSelected.id) {
             case 1:
-                fileUrl = "/vercel.svg";
-                fileName = "vercel.svg";
+                fileUrl = "/alteracao.tsv";
+                fileName = "alteracao.tsv";
                 break;
             case 2:
                 fileUrl = "/vercel-copy.svg";
